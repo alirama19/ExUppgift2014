@@ -497,6 +497,15 @@
     <Compile Include="src\ASF\sam\drivers\pwm\pwm.c">
       <SubType>compile</SubType>
     </Compile>
+    <Compile Include="src\global_variables.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\pwm_custom.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\pwm_custom.h">
+      <SubType>compile</SubType>
+    </Compile>
     <None Include="src\ASF\sam\drivers\pwm\pwm.h">
       <SubType>compile</SubType>
     </None>
@@ -1061,12 +1070,6 @@
     <None Include="src\config\FreeRTOSConfig.h">
       <SubType>compile</SubType>
     </None>
-    <Compile Include="src\dac_custom.c">
-      <SubType>compile</SubType>
-    </Compile>
-    <Compile Include="src\dac_custom.h">
-      <SubType>compile</SubType>
-    </Compile>
     <Compile Include="src\main.c">
       <SubType>compile</SubType>
     </Compile>

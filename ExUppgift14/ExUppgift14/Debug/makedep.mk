@@ -4,6 +4,8 @@
 
 src\ASF\sam\drivers\pwm\pwm.c
 
+src\pwm_custom.c
+
 src\PIDRegulation.c
 
 src\adc_custom.c
@@ -63,8 +65,6 @@ src\ASF\thirdparty\freertos\freertos-7.3.0\source\queue.c
 src\ASF\thirdparty\freertos\freertos-7.3.0\source\tasks.c
 
 src\ASF\thirdparty\freertos\freertos-7.3.0\source\timers.c
-
-src\dac_custom.c
 
 src\main.c
 

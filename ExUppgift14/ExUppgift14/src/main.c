@@ -1,6 +1,6 @@
 #include <asf.h>
 #include "adc_custom.h"
-#include "dac_custom.h"
+#include "pwm_custom.h"
 #include "delay.h"
 #include "PIDRegulation.h"
 
@@ -21,13 +21,11 @@ int main (void)
 	sysclk_init(); // Initialize system clock
 	board_init(); // Initialize Arduino Due board
 	
-	delay_init(); // Initialize the timer
-	
 	ioport_init(); // Initialize the IO-port
 	
 	adc_distanceSensor_setup(); // Setup ADC for reading distance sensor
 	
-	dac_setup(); // Setup DAC for controlling fan motor
+	//fan_motor_control_init(); // Initialize PWM for fan motor control
 	
 	configure_console(); // Initialize UART
 	

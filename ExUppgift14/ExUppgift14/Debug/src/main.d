@@ -149,7 +149,7 @@ src/main.d src/main.o: ../src/main.c ../src/asf.h \
  ../src/ASF/sam/drivers/uart/uart.h ../src/ASF/sam/drivers/usart/usart.h \
  ../src/config/conf_uart_serial.h ../src/ASF/sam/drivers/tc/tc.h \
  ../src/ASF/sam/drivers/pio/pio_handler.h ../src/adc_custom.h \
- ../src/dac_custom.h ../src/PIDRegulation.h
+ ../src/pwm_custom.h ../src/PIDRegulation.h
 
 ../src/asf.h:
 
@@ -469,6 +469,6 @@ c:\program\ files\ (x86)\atmel\atmel\ toolchain\arm\ gcc\native\4.8.1443\arm-gnu
 
 ../src/adc_custom.h:
 
-../src/dac_custom.h:
+../src/pwm_custom.h:
 
 ../src/PIDRegulation.h:
