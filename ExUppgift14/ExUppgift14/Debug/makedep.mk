@@ -2,6 +2,12 @@
 # Automatically-generated file. Do not edit or delete the file
 ################################################################################
 
+src\ASF\sam\drivers\pwm\pwm.c
+
+src\PIDRegulation.c
+
+src\adc_custom.c
+
 src\ASF\common\services\clock\sam3x\sysclk.c
 
 src\ASF\common\services\delay\sam\cycle_counter.c
@@ -57,6 +63,8 @@ src\ASF\thirdparty\freertos\freertos-7.3.0\source\queue.c
 src\ASF\thirdparty\freertos\freertos-7.3.0\source\tasks.c
 
 src\ASF\thirdparty\freertos\freertos-7.3.0\source\timers.c
+
+src\dac_custom.c
 
 src\main.c
 
