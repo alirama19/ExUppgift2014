@@ -60,7 +60,7 @@
 //#define CONF_BOARD_PWM_LED1
 
 /* Configure PWM LED2 pin */
-//#define CONF_BOARD_PWM_LED2
+#define CONF_BOARD_PWM_LED2
 
 /* Configure SPI0 pins */
 //#define CONF_BOARD_SPI0

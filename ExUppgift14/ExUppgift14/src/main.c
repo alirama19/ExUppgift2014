@@ -3,6 +3,8 @@
 #include "pwm_custom.h"
 #include "delay.h"
 #include "PIDRegulation.h"
+#include "config/conf_board.h"
+#include "config/conf_clock.h "
 
 static void configure_console(void)
 {
@@ -25,7 +27,7 @@ int main (void)
 	
 	adc_distanceSensor_setup(); // Setup ADC for reading distance sensor
 	
-	//fan_motor_control_init(); // Initialize PWM for fan motor control
+	fan_motor_control_init(); // Initialize PWM for fan motor control
 	
 	configure_console(); // Initialize UART
 	
