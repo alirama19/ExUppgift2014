@@ -1,3 +1,17 @@
+/*
+* main.c
+*
+*	Hardware:
+*	-Pin 3 on the shield should not connect to pin 3 on the Arduino
+*	-Pin 7 on the Arduino should connect to pin 3 on the Shield
+*	-VIN and GND on the shield connects to a 12V power regulator
+*	-"+" and "-" at port "A" on the shield connects the theh fan motor
+*	-Distance sensor connects the A8 on the Arduino
+*
+* Created: 
+* Author: 
+*/
+
 #include <asf.h>
 #include "adc_custom.h"
 #include "pwm_custom.h"

@@ -1,4 +1,4 @@
-int sensorpin = 3;                 // analog pin used to connect the sharp sensor
+int sensorpin =A0;                 // analog pin used to connect the sharp sensor
 int val = 0;                 // variable to store the values from sensor(initially zero)
 
 void setup()

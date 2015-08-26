@@ -1,5 +1,5 @@
 const int
-PWM_A   = 3,
+PWM_A   = 7,
 DIR_A   = 12,
 BRAKE_A = 9;
 
@@ -23,16 +23,16 @@ void loop() {
   // Set motor to full speed
   Serial.println("Full speed, PWM: 255");
   analogWrite(PWM_A, 255);     // Set the speed of the motor
-  delay(2000);                 // hold the motor at full speed for some seconds
+  delay(3000);                 // hold the motor at full speed for some seconds
 
    // Set motor to full speed
   Serial.println("Half speed, PWM: 127");
   analogWrite(PWM_A, 127);     // Set the speed of the motor
-  delay(2000);                 // hold the motor at full speed for some seconds
+  delay(3000);                 // hold the motor at full speed for some seconds
 
   // now stop the motor by inertia, the motor will stop slower than with the brake function
   Serial.println("Turn off, PWM: 0");
   analogWrite(PWM_A, 0);       // turn off power to the motor
-  delay(2000);                 // hold the motor at full speed for some seconds
+  delay(3000);                 // hold the motor at full speed for some seconds
 }
 
