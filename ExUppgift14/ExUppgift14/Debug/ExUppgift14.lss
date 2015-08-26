@@ -21,19 +21,19 @@ Idx Name          Size      VMA       LMA       File off  Algn
                   CONTENTS, READONLY, DEBUGGING
   8 .debug_abbrev 00003536  00000000  00000000  0002504c  2**0
                   CONTENTS, READONLY, DEBUGGING
-  9 .debug_loc    000085f8  00000000  00000000  00028582  2**0
+  9 .debug_loc    000085ed  00000000  00000000  00028582  2**0
                   CONTENTS, READONLY, DEBUGGING
- 10 .debug_aranges 00000fa8  00000000  00000000  00030b7a  2**0
+ 10 .debug_aranges 00000fa8  00000000  00000000  00030b6f  2**0
                   CONTENTS, READONLY, DEBUGGING
- 11 .debug_ranges 00000e90  00000000  00000000  00031b22  2**0
+ 11 .debug_ranges 00000e90  00000000  00000000  00031b17  2**0
                   CONTENTS, READONLY, DEBUGGING
- 12 .debug_macro  0001aefc  00000000  00000000  000329b2  2**0
+ 12 .debug_macro  0001aefc  00000000  00000000  000329a7  2**0
                   CONTENTS, READONLY, DEBUGGING
- 13 .debug_line   00014aa2  00000000  00000000  0004d8ae  2**0
+ 13 .debug_line   00014aa2  00000000  00000000  0004d8a3  2**0
                   CONTENTS, READONLY, DEBUGGING
- 14 .debug_str    0006a8d7  00000000  00000000  00062350  2**0
+ 14 .debug_str    0006a8d7  00000000  00000000  00062345  2**0
                   CONTENTS, READONLY, DEBUGGING
- 15 .debug_frame  00002d2c  00000000  00000000  000ccc28  2**2
+ 15 .debug_frame  00002d2c  00000000  00000000  000ccc1c  2**2
                   CONTENTS, READONLY, DEBUGGING
 
 Disassembly of section .text:
@@ -812,14 +812,15 @@ void PIDRegulate(void)
 	// P-regulation
 	int32_t error = 0;
 	error = DISTANCE_SET - distance; //get the error value of distance sensor
-   80456:	f5c0 6000 	rsb	r0, r0, #2048	; 0x800
+   80456:	f5c0 60a2 	rsb	r0, r0, #1296	; 0x510
+   8045a:	3004      	adds	r0, #4
 	
 	// Convert ADC to PWM range
 	output_value = (((int32_t)P_VALUE_SET*error)); // Calculate P
 
 	// Make sure the values do not exceed the PWM Duty Cycle range (0-100%)
 	if (output_value < 0)
-   8045a:	eb10 0080 	adds.w	r0, r0, r0, lsl #2
+   8045c:	00c0      	lsls	r0, r0, #3
    8045e:	d503      	bpl.n	80468 <PIDRegulate+0x1c>
 	{
 		output_value = 0;

@@ -12,10 +12,10 @@
 #include "asf.h"
 
 //Defines which is used for the PID-regulation
-#define P_VALUE_SET 5
+#define P_VALUE_SET 8
 
 //Defines which is used for the PID-regulation
-#define DISTANCE_SET 2048
+#define DISTANCE_SET 1300
 
 // PWM
 extern pwm_channel_t pwm_channel_instance;

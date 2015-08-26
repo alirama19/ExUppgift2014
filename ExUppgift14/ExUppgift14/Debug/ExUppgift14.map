@@ -9242,31 +9242,31 @@ OUTPUT(ExUppgift14.elf elf32-littlearm)
  .debug_abbrev  0x00002f57      0x261 src/ASF/thirdparty/freertos/freertos-7.3.0/source/timers.o
  .debug_abbrev  0x000031b8      0x37e src/main.o
 
-.debug_loc      0x00000000     0x85f8
+.debug_loc      0x00000000     0x85ed
  .debug_loc     0x00000000      0xd48 src/ASF/sam/drivers/pwm/pwm.o
  .debug_loc     0x00000d48       0x2c src/pwm_custom.o
  .debug_loc     0x00000d74       0x4d src/SerialComTask.o
- .debug_loc     0x00000dc1      0x113 src/PIDRegulation.o
- .debug_loc     0x00000ed4       0x20 src/adc_custom.o
- .debug_loc     0x00000ef4      0x12d src/ASF/common/services/clock/sam3x/sysclk.o
- .debug_loc     0x00001021       0xc5 src/ASF/common/utils/stdio/read.o
- .debug_loc     0x000010e6      0x161 src/ASF/common/utils/stdio/write.o
- .debug_loc     0x00001247       0x20 src/ASF/sam/boards/arduino_due_x/init.o
- .debug_loc     0x00001267      0x980 src/ASF/sam/drivers/adc/adc.o
- .debug_loc     0x00001be7      0xa83 src/ASF/sam/drivers/pio/pio.o
- .debug_loc     0x0000266a      0x53d src/ASF/sam/drivers/pio/pio_handler.o
- .debug_loc     0x00002ba7      0xc95 src/ASF/sam/drivers/pmc/pmc.o
- .debug_loc     0x0000383c      0x236 src/ASF/sam/drivers/uart/uart.o
- .debug_loc     0x00003a72     0x128d src/ASF/sam/drivers/usart/usart.o
- .debug_loc     0x00004cff       0x7e src/ASF/sam/utils/cmsis/sam3x/source/templates/gcc/startup_sam3x.o
- .debug_loc     0x00004d7d      0x12b src/ASF/sam/utils/syscalls/gcc/syscalls.o
- .debug_loc     0x00004ea8       0x91 src/ASF/thirdparty/freertos/freertos-7.3.0/source/list.o
- .debug_loc     0x00004f39      0x100 src/ASF/thirdparty/freertos/freertos-7.3.0/source/portable/gcc/sam/port.o
- .debug_loc     0x00005039      0x371 src/ASF/thirdparty/freertos/freertos-7.3.0/source/portable/memmang/heap_4.o
- .debug_loc     0x000053aa     0x10da src/ASF/thirdparty/freertos/freertos-7.3.0/source/queue.o
- .debug_loc     0x00006484     0x1545 src/ASF/thirdparty/freertos/freertos-7.3.0/source/tasks.o
- .debug_loc     0x000079c9      0x9a4 src/ASF/thirdparty/freertos/freertos-7.3.0/source/timers.o
- .debug_loc     0x0000836d      0x28b src/main.o
+ .debug_loc     0x00000dc1      0x108 src/PIDRegulation.o
+ .debug_loc     0x00000ec9       0x20 src/adc_custom.o
+ .debug_loc     0x00000ee9      0x12d src/ASF/common/services/clock/sam3x/sysclk.o
+ .debug_loc     0x00001016       0xc5 src/ASF/common/utils/stdio/read.o
+ .debug_loc     0x000010db      0x161 src/ASF/common/utils/stdio/write.o
+ .debug_loc     0x0000123c       0x20 src/ASF/sam/boards/arduino_due_x/init.o
+ .debug_loc     0x0000125c      0x980 src/ASF/sam/drivers/adc/adc.o
+ .debug_loc     0x00001bdc      0xa83 src/ASF/sam/drivers/pio/pio.o
+ .debug_loc     0x0000265f      0x53d src/ASF/sam/drivers/pio/pio_handler.o
+ .debug_loc     0x00002b9c      0xc95 src/ASF/sam/drivers/pmc/pmc.o
+ .debug_loc     0x00003831      0x236 src/ASF/sam/drivers/uart/uart.o
+ .debug_loc     0x00003a67     0x128d src/ASF/sam/drivers/usart/usart.o
+ .debug_loc     0x00004cf4       0x7e src/ASF/sam/utils/cmsis/sam3x/source/templates/gcc/startup_sam3x.o
+ .debug_loc     0x00004d72      0x12b src/ASF/sam/utils/syscalls/gcc/syscalls.o
+ .debug_loc     0x00004e9d       0x91 src/ASF/thirdparty/freertos/freertos-7.3.0/source/list.o
+ .debug_loc     0x00004f2e      0x100 src/ASF/thirdparty/freertos/freertos-7.3.0/source/portable/gcc/sam/port.o
+ .debug_loc     0x0000502e      0x371 src/ASF/thirdparty/freertos/freertos-7.3.0/source/portable/memmang/heap_4.o
+ .debug_loc     0x0000539f     0x10da src/ASF/thirdparty/freertos/freertos-7.3.0/source/queue.o
+ .debug_loc     0x00006479     0x1545 src/ASF/thirdparty/freertos/freertos-7.3.0/source/tasks.o
+ .debug_loc     0x000079be      0x9a4 src/ASF/thirdparty/freertos/freertos-7.3.0/source/timers.o
+ .debug_loc     0x00008362      0x28b src/main.o
 
 .debug_aranges  0x00000000      0xfa8
  .debug_aranges
