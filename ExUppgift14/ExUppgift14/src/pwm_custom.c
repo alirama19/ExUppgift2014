@@ -14,7 +14,7 @@ void fan_motor_control_init(void)
 {
 	pmc_enable_periph_clk(ID_PIOD);
 	pmc_enable_periph_clk(ID_PIOC);
-	pio_set_output(PIOD, PIO_PD8, LOW, DISABLE, ENABLE); // Set direction according to "+" and "-" pins on the shield(pin 12 on Due)
+	pio_set_output(PIOD, PIO_PD8, HIGH, DISABLE, ENABLE); // Set direction according to "+" and "-" pins on the shield(pin 12 on Due)
 	pio_set_output(PIOC, PIO_PC21, LOW, DISABLE, ENABLE); // Disable break-function on the shield(pin 9 on Due)
 	
 	pmc_enable_periph_clk(ID_PWM);

@@ -18,17 +18,41 @@ int32_t uD = 0;
 void PIDRegulationTask (void *pvParameters)
 {
 	portTickType xLastWakeTime = xTaskGetTickCount();
-	const portTickType xFrequency = 300; // Run every few ms
+	const portTickType xFrequency = 50; // Run every few ms
+	
+	int32_t previousE = 0;
 	
 	for(;;){
-
 		//testPrintADC();
 		//testFans();
-		//	pwm_channel_update_duty(PWM, &pwm_channel_instance, 100);
+		//pwm_channel_update_duty(PWM, &pwm_channel_instance, 100);
+		
+		// Samplingstiden
+		vTaskDelayUntil(&xLastWakeTime,xFrequency);
 		
 		// P-regulation
-		//int32_t error = 0;
-		//error = tempSetPoint - read_distance(); //get the error value of distance sensor
+		int32_t error = 0;
+		distance = read_distance();
+		error = DISTANCE_SET - distance; //get the error value of distance sensor
+		
+		//output_value = (int32_t)(tempP*(uP+uI+uD));
+		output_value = (int32_t)tempP*error;
+		
+		previousE = error;
+		
+		// Control the motor and make sure the values are not exceed the maximum value
+		if (output_value < 0)
+		{
+			output_value = 0;
+		}
+		else if (output_value > 100)
+		{
+			output_value = 100;
+		}
+		
+		//send the output_value to fan
+		pwm_channel_update_duty(PWM, &pwm_channel_instance, output_value);
+		
 	}
 }
 

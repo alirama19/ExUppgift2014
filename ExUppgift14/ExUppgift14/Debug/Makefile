@@ -102,7 +102,9 @@ SUBDIRS :=  \
 # Add inputs and outputs from these tool invocations to the build variables 
 C_SRCS +=  \
 ../src/ASF/sam/drivers/pwm/pwm.c \
+../src/global_variables.c \
 ../src/pwm_custom.c \
+../src/SerialComTask.c \
 ../src/PIDRegulation.c \
 ../src/adc_custom.c \
 ../src/ASF/common/services/clock/sam3x/sysclk.c \
@@ -144,7 +146,9 @@ ASM_SRCS +=
 
 OBJS +=  \
 src/ASF/sam/drivers/pwm/pwm.o \
+src/global_variables.o \
 src/pwm_custom.o \
+src/SerialComTask.o \
 src/PIDRegulation.o \
 src/adc_custom.o \
 src/ASF/common/services/clock/sam3x/sysclk.o \
@@ -179,7 +183,9 @@ src/main.o
 
 OBJS_AS_ARGS +=  \
 src/ASF/sam/drivers/pwm/pwm.o \
+src/global_variables.o \
 src/pwm_custom.o \
+src/SerialComTask.o \
 src/PIDRegulation.o \
 src/adc_custom.o \
 src/ASF/common/services/clock/sam3x/sysclk.o \
@@ -214,7 +220,9 @@ src/main.o
 
 C_DEPS +=  \
 src/ASF/sam/drivers/pwm/pwm.d \
+src/global_variables.d \
 src/pwm_custom.d \
+src/SerialComTask.d \
 src/PIDRegulation.d \
 src/adc_custom.d \
 src/ASF/common/services/clock/sam3x/sysclk.d \
@@ -249,7 +257,9 @@ src/main.d
 
 C_DEPS_AS_ARGS +=  \
 src/ASF/sam/drivers/pwm/pwm.d \
+src/global_variables.d \
 src/pwm_custom.d \
+src/SerialComTask.d \
 src/PIDRegulation.d \
 src/adc_custom.d \
 src/ASF/common/services/clock/sam3x/sysclk.d \
@@ -297,6 +307,10 @@ LINKER_SCRIPT_DEP+=  \
 
 
 # AVR32/GNU C Compiler
+
+
+
+
 
 
 

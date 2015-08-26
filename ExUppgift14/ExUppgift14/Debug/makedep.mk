@@ -4,7 +4,11 @@
 
 src\ASF\sam\drivers\pwm\pwm.c
 
+src\global_variables.c
+
 src\pwm_custom.c
+
+src\SerialComTask.c
 
 src\PIDRegulation.c
 

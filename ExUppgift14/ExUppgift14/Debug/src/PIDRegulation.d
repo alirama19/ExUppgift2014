@@ -152,7 +152,7 @@ src/PIDRegulation.d src/PIDRegulation.o: ../src/PIDRegulation.c \
  ../src/ASF/sam/drivers/pio/pio_handler.h ../src/PIDRegulation.h \
  ../src/adc_custom.h ../src/pwm_custom.h \
  c:\program\ files\ (x86)\atmel\atmel\ toolchain\arm\ gcc\native\4.8.1443\arm-gnu-toolchain\arm-none-eabi\include\inttypes.h \
- ../src/global_variables.h
+ ../src/global_variables.h ../src/asf.h
 
 ../src/asf.h:
 
@@ -479,3 +479,5 @@ c:\program\ files\ (x86)\atmel\atmel\ toolchain\arm\ gcc\native\4.8.1443\arm-gnu
 c:\program\ files\ (x86)\atmel\atmel\ toolchain\arm\ gcc\native\4.8.1443\arm-gnu-toolchain\arm-none-eabi\include\inttypes.h:
 
 ../src/global_variables.h:
+
+../src/asf.h:

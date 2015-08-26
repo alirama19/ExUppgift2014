@@ -1,5 +1,6 @@
-src/pwm_custom.d src/pwm_custom.o: ../src/pwm_custom.c ../src/asf.h \
- ../src/ASF/sam/drivers/adc/adc.h ../src/ASF/sam/utils/compiler.h \
+src/SerialComTask.d src/SerialComTask.o: ../src/SerialComTask.c \
+ ../src/asf.h ../src/ASF/sam/drivers/adc/adc.h \
+ ../src/ASF/sam/utils/compiler.h \
  c:\program\ files\ (x86)\atmel\atmel\ toolchain\arm\ gcc\native\4.8.1443\arm-gnu-toolchain\lib\gcc\arm-none-eabi\4.8.4\include\stddef.h \
  ../src/ASF/common/utils/parts.h \
  ../src/ASF/sam/utils/preprocessor/preprocessor.h \
@@ -148,9 +149,8 @@ src/pwm_custom.d src/pwm_custom.o: ../src/pwm_custom.c ../src/asf.h \
  ../src/ASF/common/services/serial/sam_uart/uart_serial.h \
  ../src/ASF/sam/drivers/uart/uart.h ../src/ASF/sam/drivers/usart/usart.h \
  ../src/config/conf_uart_serial.h ../src/ASF/sam/drivers/tc/tc.h \
- ../src/ASF/sam/drivers/pio/pio_handler.h ../src/pwm_custom.h \
- ../src/global_variables.h ../src/asf.h ../src/config/conf_board.h \
- ../src/config/conf_clock.h\ 
+ ../src/ASF/sam/drivers/pio/pio_handler.h ../src/SerialComTask.h \
+ ../src/global_variables.h
 
 ../src/asf.h:
 
@@ -468,12 +468,6 @@ c:\program\ files\ (x86)\atmel\atmel\ toolchain\arm\ gcc\native\4.8.1443\arm-gnu
 
 ../src/ASF/sam/drivers/pio/pio_handler.h:
 
-../src/pwm_custom.h:
+../src/SerialComTask.h:
 
 ../src/global_variables.h:
-
-../src/asf.h:
-
-../src/config/conf_board.h:
-
-../src/config/conf_clock.h\ :

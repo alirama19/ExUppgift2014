@@ -8,8 +8,8 @@
 *	-"+" and "-" at port "A" on the shield connects the theh fan motor
 *	-Distance sensor connects the A8 on the Arduino
 *
-* Created: 
-* Author: 
+* Created:
+* Author:
 */
 
 #include <asf.h>
@@ -17,6 +17,7 @@
 #include "pwm_custom.h"
 #include "delay.h"
 #include "PIDRegulation.h"
+#include "SerialComTask.h"
 #include "config/conf_board.h"
 #include "config/conf_clock.h "
 
@@ -52,6 +53,13 @@ int main (void)
 	TASK_PIDRegulation_STACK_SIZE, NULL, TASK_PIDRegulation_STACK_PRIORITY, NULL) != pdPASS)
 	{
 		printf("Failed to create PIDRegulationTask\r\n");
+	}
+	
+	/* Creating the serial-printing task */
+	if (xTaskCreate(SerialComTask, (const signed char * const) "SerialComTask",
+	TASK_SerialComTask_STACK_SIZE, NULL, TASK_SerialComTask_STACK_PRIORITY, NULL) != pdPASS)
+	{
+		printf("Failed to create SerialComTask\r\n");
 	}
 	
 	/* Start the FreeRTOS scheduler running all tasks indefinitely*/
