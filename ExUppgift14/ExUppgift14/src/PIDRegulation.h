@@ -13,8 +13,8 @@
 #define TASK_PIDRegulation_STACK_SIZE (2048/sizeof(portSTACK_TYPE))
 #define TASK_PIDRegulation_STACK_PRIORITY (4)
 
-
 void PIDRegulationTask (void *pvParameters);
+void PIDRegulate(void);
 unsigned int read_distance(void);
 void testPrintADC();
 void testFans();

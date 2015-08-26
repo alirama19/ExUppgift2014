@@ -14,5 +14,4 @@ pwm_channel_t pwm_channel_instance;
 int32_t distance = 0;
 
 // PID
-int32_t output_value = 100;
-int32_t tempP = P_VALUE_SET;
+int32_t output_value = 100;
