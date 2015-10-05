@@ -26,34 +26,59 @@ void PIDRegulationTask (void *pvParameters)
 	}
 }
 
-void PIDRegulate(void)
-{
-	
+// P-regulator used for Ziegler-Nichols method
+void PRegulate(void){
 	// Read raw sensor distance from ADC
 	distance = read_distance();
 	
-	// P-regulation
-	int32_t error = 0;
-	error = DISTANCE_SET - distance; //get the error value of distance sensor
+	// Calculate error
+	error = DISTANCE_SET - distance;
 	
-	//output_value = (int32_t)(tempP*(uP+uI+uD));  // Calculate full PID
+	// Calculate P, convert to procentage for the PWM 
+	output_value = (((int32_t)P_CONSTANT * error)*100) / 4095; 
 	
-	// Convert ADC to PWM range
-	output_value = (((int32_t)P_VALUE_SET*error)); // Calculate P
+	// Make sure the values do not exceed the PWM Duty Cycle range (0-100%)
+	if (output_value < 0)
+	{
+		output_value = 0;
+	}
+	else if (output_value > 4095)
+	{
+		output_value = 4095;
+	}
+
+    // Convert output value to procentage for the PWM
+    output_value = (output_value * 100) / 4095;
+	
+	// Write output_value to PWM
+	pwm_channel_update_duty(PWM, &pwm_channel_instance, output_value);
+}
+
+void PIDRegulate(void){
+	// Read raw sensor distance from ADC
+	distance = read_distance();
+
+	// error values
+	error = DISTANCE_SET - distance;
+	errSum += (error + dTime);
+	dErr = (error - lastErr) / dTime;
+	
+	output_value = P_CONSTANT * error + I_CONSTANT * errSum + D_CONSTANT*dErr;
 
 	// Make sure the values do not exceed the PWM Duty Cycle range (0-100%)
 	if (output_value < 0)
 	{
 		output_value = 0;
 	}
-	else if (output_value > 4096)
+	else if (output_value > 4095)
 	{
-		output_value = 4096;
+		output_value = 4095;
 	}
 
-	output_value = (output_value * 100) / 4096;
+    // Convert output value to procentage for the PWM
+	output_value = (output_value * 100) / 4095;
 	
-	//send the output_value to fan
+	// Send the output_value to fan
 	pwm_channel_update_duty(PWM, &pwm_channel_instance, output_value);
 }
 
@@ -64,20 +89,3 @@ unsigned int read_distance(void)
 	return (adc_get_channel_value(ADC, ADC_CHANNEL_10));
 }
 
-// Cycles between 0,50 and 100% Duty Cycle on PWM
-void testFans(void)
-{
-	portTickType xLastWakeTime = xTaskGetTickCount();
-	const portTickType xFrequency = 5000; // Run every few seconds
-	vTaskDelayUntil(&xLastWakeTime,xFrequency);
-	pwm_channel_update_duty(PWM, &pwm_channel_instance, 100);
-	printf("100\n");
-	
-	vTaskDelayUntil(&xLastWakeTime,xFrequency);
-	pwm_channel_update_duty(PWM, &pwm_channel_instance, 0);
-	printf("0\n");
-	
-	vTaskDelayUntil(&xLastWakeTime,xFrequency);
-	pwm_channel_update_duty(PWM, &pwm_channel_instance, 50);
-	printf("50\n");
-}

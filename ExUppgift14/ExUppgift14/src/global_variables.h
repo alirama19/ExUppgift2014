@@ -11,11 +11,14 @@
 
 #include "asf.h"
 
-//Defines which is used for the PID-regulation
-#define P_VALUE_SET 8
+//Defines constants for PID
+#define P_CONSTANT 8
+#define I_CONSTANT 0
+#define D_CONSTANT 0
 
-//Defines which is used for the PID-regulation
+//Defines the setpoint(s) for the PID
 #define DISTANCE_SET 1300
+// TODO - Measure the distances on the rig line and #define fixed distance points
 
 // PWM
 extern pwm_channel_t pwm_channel_instance;

@@ -15,6 +15,8 @@
 
 void PIDRegulationTask (void *pvParameters);
 void PIDRegulate(void);
+void PRegulate(void);
+
 unsigned int read_distance(void);
 void testPrintADC();
 void testFans();

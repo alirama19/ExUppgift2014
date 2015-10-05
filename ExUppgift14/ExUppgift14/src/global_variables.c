@@ -14,4 +14,11 @@ pwm_channel_t pwm_channel_instance;
 int32_t distance = 0;
 
 // PID
+int32_t error = 0;
+int32_t errSum = 0;
+int32_t dErr = 0;
+int32_t lastErr = 0;
+
+int32_t dTime = 0;
+
 int32_t output_value = 100;
