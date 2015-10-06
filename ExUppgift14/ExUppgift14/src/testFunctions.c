@@ -5,8 +5,6 @@
  *  Author: Stefan
  */ 
 
-
-
 // Cycles between 0,50 and 100% Duty Cycle on PWM
 void testFans(void)
 {

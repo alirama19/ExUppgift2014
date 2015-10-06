@@ -5,7 +5,6 @@
  *  Author: Stefan
  */ 
 
-
 #ifndef TESTFUNCTIONS_H_
 #define TESTFUNCTIONS_H_
 

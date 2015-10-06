@@ -2,7 +2,7 @@
 * global_variables.h
 *
 * Created: 2015-08-20 21:41:35
-*  Author: Stefan
+*  Author: Stefan Angelov
 */
 
 

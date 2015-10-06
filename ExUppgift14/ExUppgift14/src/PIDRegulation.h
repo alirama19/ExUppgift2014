@@ -5,7 +5,6 @@
 *  Author: Stefan
 */
 
-
 #ifndef PIDREGULATION_H_
 #define PIDREGULATION_H_
 
@@ -14,10 +13,8 @@
 #define TASK_PIDRegulation_STACK_PRIORITY (4)
 
 void PIDRegulationTask (void *pvParameters);
-void PIDRegulate(void);
-void PRegulate(void);
 
-unsigned int read_distance(void);
-void testPrintADC();
-void testFans();
+void PRegulate(void);
+void PIDRegulate(void);
+
 #endif /* PIDREGULATION_H_ */

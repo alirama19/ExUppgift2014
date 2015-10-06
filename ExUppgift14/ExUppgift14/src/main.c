@@ -13,7 +13,7 @@
 */
 
 #include <asf.h>
-#include "adc_custom.h"
+#include "ADCCustom.h"
 #include "pwm_custom.h"
 #include "delay.h"
 #include "PIDRegulation.h"
@@ -40,7 +40,7 @@ int main (void)
 	
 	ioport_init(); // Initialize the IO-port
 	
-	adc_distanceSensor_setup(); // Setup ADC for reading distance sensor
+	ADCSetup(); // Setup ADC for reading distance sensor
 	
 	fan_motor_control_init(); // Initialize PWM for fan motor control
 	

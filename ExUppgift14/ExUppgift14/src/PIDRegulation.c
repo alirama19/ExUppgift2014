@@ -6,7 +6,7 @@
 */
 #include <asf.h>
 #include "PIDRegulation.h"
-#include "adc_custom.h"
+#include "ADCCustom.h"
 #include "pwm_custom.h"
 #include "inttypes.h"
 #include "global_variables.h"
@@ -29,7 +29,7 @@ void PIDRegulationTask (void *pvParameters)
 // P-regulator used for Ziegler-Nichols method
 void PRegulate(void){
 	// Read raw sensor distance from ADC
-	distance = read_distance();
+	distance = ADCRead();
 	
 	// Calculate error
 	error = DISTANCE_SET - distance;
@@ -54,6 +54,7 @@ void PRegulate(void){
 	pwm_channel_update_duty(PWM, &pwm_channel_instance, output_value);
 }
 
+// PID function
 void PIDRegulate(void){
 	// Read raw sensor distance from ADC
 	distance = read_distance();
@@ -81,11 +82,3 @@ void PIDRegulate(void){
 	// Send the output_value to fan
 	pwm_channel_update_duty(PWM, &pwm_channel_instance, output_value);
 }
-
-unsigned int read_distance(void)
-{
-	adc_start(ADC);
-	while((adc_get_status(ADC) & 0x1<<24)==0);  // Wait until DRDY(Data Ready) is HIGH
-	return (adc_get_channel_value(ADC, ADC_CHANNEL_10));
-}
-
