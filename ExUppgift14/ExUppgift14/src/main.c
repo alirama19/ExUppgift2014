@@ -13,7 +13,7 @@
 */
 
 #include <asf.h>
-#include "ADCCustom.h"
+#include "testFunctions.h"
 #include "pwm_custom.h"
 #include "delay.h"
 #include "PIDRegulation.h"

@@ -10,15 +10,7 @@
 #include "config/conf_board.h"
 #include "config/conf_clock.h "
 
-void fan_motor_control_init(void)
-{
-	pmc_enable_periph_clk(ID_PIOD);
-	pmc_enable_periph_clk(ID_PIOC);
-	pio_set_output(PIOD, PIO_PD8, HIGH, DISABLE, ENABLE); // Set direction according to "+" and "-" pins on the shield(pin 12 on Due)
-	pio_set_output(PIOC, PIO_PC21, LOW, DISABLE, ENABLE); // Disable break-function on the shield(pin 9 on Due)
-	
-	pmc_enable_periph_clk(ID_PWM);
-	pwm_channel_disable(PWM, PWM_CHANNEL_6);
+void fan_motor_control_init(void){
 	pwm_clock_t pwm_clock ={
 		.ul_clka = 1000*100,
 		.ul_clkb = 0,

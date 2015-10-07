@@ -2,6 +2,8 @@
 # Automatically-generated file. Do not edit or delete the file
 ################################################################################
 
+src\ADCCustom.c
+
 src\ASF\sam\drivers\pwm\pwm.c
 
 src\global_variables.c
@@ -12,9 +14,9 @@ src\pwm_custom.c
 
 src\SerialComTask.c
 
-src\PIDRegulation.c
+src\testFunctions.c
 
-src\adc_custom.c
+src\PIDRegulation.c
 
 src\ASF\common\services\clock\sam3x\sysclk.c
 

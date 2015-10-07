@@ -485,6 +485,12 @@
     </ToolchainSettings>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="src\ADCCustom.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\ADCCustom.h">
+      <SubType>compile</SubType>
+    </Compile>
     <Compile Include="src\ASF\sam\drivers\pwm\pwm.c">
       <SubType>compile</SubType>
     </Compile>
@@ -510,6 +516,12 @@
       <SubType>compile</SubType>
     </Compile>
     <Compile Include="src\SerialComTask.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\testFunctions.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\testFunctions.h">
       <SubType>compile</SubType>
     </Compile>
     <None Include="src\ASF\sam\drivers\pwm\pwm.h">
@@ -545,12 +557,6 @@
     <None Include="src\asf.h">
       <SubType>compile</SubType>
     </None>
-    <Compile Include="src\adc_custom.c">
-      <SubType>compile</SubType>
-    </Compile>
-    <Compile Include="src\adc_custom.h">
-      <SubType>compile</SubType>
-    </Compile>
     <Compile Include="src\ASF\common\services\clock\sam3x\sysclk.c">
       <SubType>compile</SubType>
     </Compile>

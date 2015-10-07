@@ -11,7 +11,7 @@
 
 void PWMSetup(void);
 void PWMEnableCustomPin(void);
-
+void motorShield_init(void);
 
 
 #endif /* PWMCUSTOM_H_ */
