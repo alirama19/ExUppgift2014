@@ -8,7 +8,7 @@
 #include "asf.h"
 #include "PWMCustom.h"
 
-pwm_channel_t pwm_pin8_instance;
+pwm_channel_t pwm_pin6_instance;
 
 void PWMSetup(void){
 	pmc_enable_periph_clk(ID_PWM);
@@ -24,10 +24,10 @@ void PWMSetup(void){
 void PWMEnableCustomPin(void){
 	//PWM on Arduino pin 8
 	pwm_channel_disable(PWM, PWM_CHANNEL_6);
-	pwm_pin8_instance.ul_prescaler = PWM_CMR_CPRE_CLKA;
-	pwm_pin8_instance.ul_period = 100;
-	pwm_pin8_instance.ul_duty = 0;
-	pwm_pin8_instance.channel = PWM_CHANNEL_6;
+	pwm_pin6_instance.ul_prescaler = PWM_CMR_CPRE_CLKA;
+	pwm_pin6_instance.ul_period = 100;
+	pwm_pin6_instance.ul_duty = 0;
+	pwm_pin6_instance.channel = PWM_CHANNEL_6;
 	pwm_channel_init(PWM, &pwm_pin6_instance);
 	pio_set_peripheral(PIOC, PIO_PERIPH_B, PIO_PC24B_PWML7);
 	pwm_channel_enable(PWM, PWM_CHANNEL_6);
