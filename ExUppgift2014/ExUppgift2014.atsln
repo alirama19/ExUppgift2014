@@ -1,9 +1,7 @@
 ﻿
-Microsoft Visual Studio Solution File, Format Version 12.00
+Microsoft Visual Studio Solution File, Format Version 11.00
 # Atmel Studio Solution File, Format Version 11.00
-VisualStudioVersion = 14.0.23107.0
-MinimumVisualStudioVersion = 10.0.40219.1
-Project("{54F91283-7BC4-4236-8FF9-10F437C3AD48}") = "ExUppgift2014", "ExUppgift2014\ExUppgift2014.cproj", "{DCE6C7E3-EE26-4D79-826B-08594B9AD897}"
+Project("{54F91283-7BC4-4236-8FF9-10F437C3AD48}") = "ExUppgift2014", "ExUppgift2014\ExUppgift2014.cproj", "{447870FF-B3CB-44E5-AFB6-741D7F82614B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,10 +9,10 @@ Global
 		Release|ARM = Release|ARM
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{DCE6C7E3-EE26-4D79-826B-08594B9AD897}.Debug|ARM.ActiveCfg = Debug|ARM
-		{DCE6C7E3-EE26-4D79-826B-08594B9AD897}.Debug|ARM.Build.0 = Debug|ARM
-		{DCE6C7E3-EE26-4D79-826B-08594B9AD897}.Release|ARM.ActiveCfg = Release|ARM
-		{DCE6C7E3-EE26-4D79-826B-08594B9AD897}.Release|ARM.Build.0 = Release|ARM
+		{447870FF-B3CB-44E5-AFB6-741D7F82614B}.Debug|ARM.ActiveCfg = Debug|ARM
+		{447870FF-B3CB-44E5-AFB6-741D7F82614B}.Debug|ARM.Build.0 = Debug|ARM
+		{447870FF-B3CB-44E5-AFB6-741D7F82614B}.Release|ARM.ActiveCfg = Release|ARM
+		{447870FF-B3CB-44E5-AFB6-741D7F82614B}.Release|ARM.Build.0 = Release|ARM
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
