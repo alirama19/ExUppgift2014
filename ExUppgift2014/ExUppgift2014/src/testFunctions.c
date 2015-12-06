@@ -28,22 +28,22 @@ void testFans(void)
 }
 
 void testUARTr(void){
-	ioport_set_pin_dir(LED, IOPORT_DIR_OUTPUT);
-	ioport_set_pin_level(LED, HIGH);
+	ioport_set_pin_dir(LED13, IOPORT_DIR_OUTPUT);
+	ioport_set_pin_level(LED13, HIGH);
 }
 
 void blinkTest()
 {
-	ioport_set_pin_dir(LED, IOPORT_DIR_OUTPUT);
+	ioport_set_pin_dir(LED13, IOPORT_DIR_OUTPUT);
 	
 	int delay = 1000000;
 	
 	for(int i=0; i < delay; i++){
-		ioport_set_pin_level(LED, HIGH);
+		ioport_set_pin_level(LED13, HIGH);
 
 	}
 	for (int i=0; i < delay; i++){
 		
-		ioport_set_pin_level(LED, LOW);
+		ioport_set_pin_level(LED13, LOW);
 	}
 }

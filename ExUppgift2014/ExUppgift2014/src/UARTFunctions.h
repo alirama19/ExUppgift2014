@@ -9,8 +9,9 @@
 #ifndef UARTFUNCTIONS_H_
 #define UARTFUNCTIONS_H_
 
-
 int receiveByte(void);
-
+void configure_console(void);
+void getPIDValues(void);
+void setupSTDIO(void);
 
 #endif /* UARTFUNCTIONS_H_ */

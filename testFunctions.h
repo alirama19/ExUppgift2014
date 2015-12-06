@@ -9,7 +9,8 @@
 #ifndef TESTFUNCTIONS_H_
 #define TESTFUNCTIONS_H_
 
-#define LED PIO_PB14_IDX
+#define LED13 PIO_PB27_IDX
+#define LEDUART PIO_PB14_IDX
 
 void testFans(void);
 void testUARTr(void);

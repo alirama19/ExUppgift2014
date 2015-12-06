@@ -29,7 +29,6 @@
  * Support and FAQ: visit <a href="http://www.atmel.com/design-support/">Atmel Support</a>
  */
 #include <asf.h>
-#include <stdio.h>
 #include "ADCCustom.h"
 #include "PIDRegulation.h"
 #include "PWMCustom.h"
@@ -37,32 +36,39 @@
 #include "testFunctions.h"
 #include "UARTFunctions.h"
 
-	int32_t value;
+uint8_t testByte;
+int a = 0;	
 
 int main (void){
 	/* Initialize the Arduino Due system */
 	sysclk_init();
 	board_init();
 	ioport_init();
-	
+	configure_console();
+		
 	ADCSetup();
-	
-	ioport_set_pin_dir(LED, IOPORT_DIR_OUTPUT);
-	ioport_set_pin_level(LED, LOW);
-	
 
+	ioport_set_pin_dir(LED13, IOPORT_DIR_OUTPUT);
+	ioport_set_pin_level(LED13, LOW);
 	
-	while(1){
-// 		
- 		value = ADCReadSensor();
-// 		
- 		printf("%i", value);
-		
-		// blinkTest();
-		
-// 		int testByte = receiveByte();
-// 		
-// 		if (testByte > 0){
-// 			ioport_set_pin_level(LED, HIGH);
- 		}
-	}
+	ioport_set_pin_dir(LEDUART, IOPORT_DIR_OUTPUT);
+	ioport_set_pin_level(LEDUART, LOW);
+
+while (1)
+{	
+	
+//if(testByte == 0){
+while (!uart_is_rx_ready (CONF_UART)){
+	printf("%i\n", a);
+	};
+uart_read(CONF_UART, &testByte);
+// }
+delay_ms(100);
+if(testByte > 0)
+{
+	ioport_set_pin_level(LEDUART, HIGH);
+}
+
+printf("%i\n", testByte);
+}
+}

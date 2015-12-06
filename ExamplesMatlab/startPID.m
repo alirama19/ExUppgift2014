@@ -1,7 +1,6 @@
 function [] = startPID(port, n, setpoint, Kp, Ki, Kd, sampletime)
 %STARTPID Summary of this function goes here
 %   Detailed explanation goes here
-
 port = ' ';
 n = ' ';
 setpoint = ' ';
@@ -13,15 +12,19 @@ aRead = ' ';
 
 index = 1;
 
-arduino = serial(port);
-set(arduino,'BaudRate',115200);
+arduino = serial(port, 'BaudRate', 115200,'databits', 8);
 fopen(arduino);
 
-fwrite(arduino, setpoint, 'char');
-fwrite(arduino, Kp, 'char');
-fwrite(arduino, Ki, 'char');
-fwrite(arduino, Kd, 'char');
-fwrite(arduino, sampletime, 'char');
+pause(1);
+fwrite(arduino, setpoint, 'int8');
+pause(1);
+fwrite(arduino, Kp, 'int8');
+pause(1);
+fwrite(arduino, Ki, 'int8');
+pause(1);
+fwrite(arduino, Kd, 'int8');
+pause(1);
+fwrite(arduino, sampletime, 'int8');
 
 y = zeros(1, N);
 

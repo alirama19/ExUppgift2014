@@ -29,39 +29,39 @@
  * Support and FAQ: visit <a href="http://www.atmel.com/design-support/">Atmel Support</a>
  */
 #include <asf.h>
-#include <stdio.h>
 #include "ADCCustom.h"
 #include "PIDRegulation.h"
 #include "PWMCustom.h"
 #include "SerialComTask.h"
 #include "testFunctions.h"
 #include "UARTFunctions.h"
+#include "uart.h"
 
-int32_t value;
 
 int main (void){
 	/* Initialize the Arduino Due system */
 	sysclk_init();
 	board_init();
 	ioport_init();
-	
+		
 	ADCSetup();
+
+	ioport_set_pin_dir(LED13, IOPORT_DIR_OUTPUT);
+	ioport_set_pin_level(LED13, LOW);
+	// int32_t value;
 	
-	ioport_set_pin_dir(LED, IOPORT_DIR_OUTPUT);
-	ioport_set_pin_level(LED, LOW);
+/*	setupUART();*/
+//	setupSTDIO();
 	
-	while(1){
-		
-		value = ADCReadSensor();
-		
-		printf("%i", value);
-		
-		// blinkTest();
-		
-// 		int testByte = receiveByte();
-// 		
-// 		if (testByte > 0){
-// 			ioport_set_pin_level(LED, HIGH);
-// 		}
-	}
+	int testByte = 10;
+
+while (1)
+{	
+
 }
+				
+// 		value = ADCReadSensor();
+// 		printf("%i\n", value);
+		 		
+
+	}
