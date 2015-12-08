@@ -8,6 +8,7 @@ set(arduino,'BaudRate',115200);
 % set(arduino,'Terminator','CR/LF');
 
 fopen(arduino);
+pause(1);
 
  N = 7000;
  y = zeros(1, N);

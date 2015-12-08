@@ -15,5 +15,7 @@
 void testFans(void);
 void testUARTr(void);
 void blinkTest(void);
+void testReceive(void);
+void testSend(void);
 
 #endif /* TESTFUNCTIONS_H_ */

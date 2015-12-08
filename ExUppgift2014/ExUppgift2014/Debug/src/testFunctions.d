@@ -153,7 +153,7 @@ src/testFunctions.d src/testFunctions.o: ../src/testFunctions.c \
  ../src/ASF/sam/drivers/uart/uart.h ../src/ASF/sam/drivers/usart/usart.h \
  ../src/config/conf_uart_serial.h \
  ../src/ASF/sam/drivers/pio/pio_handler.h ../src/testFunctions.h \
- ../src/PWMCustom.h
+ ../src/PWMCustom.h ../src/global_variables.h ../src/ADCCustom.h
 
 ../src/asf.h:
 
@@ -476,3 +476,7 @@ c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\arm\arm-gnu-toolchain\arm-no
 ../src/testFunctions.h:
 
 ../src/PWMCustom.h:
+
+../src/global_variables.h:
+
+../src/ADCCustom.h:

@@ -154,7 +154,8 @@ src/PIDRegulation.d src/PIDRegulation.o: ../src/PIDRegulation.c \
  ../src/config/conf_uart_serial.h \
  ../src/ASF/sam/drivers/pio/pio_handler.h ../src/PIDRegulation.h \
  c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\arm\arm-gnu-toolchain\arm-none-eabi\include\inttypes.h \
- ../src/PWMCustom.h ../src/ADCCustom.h
+ ../src/PWMCustom.h ../src/ADCCustom.h ../src/global_variables.h \
+ ../src/UARTFunctions.h
 
 ../src/asf.h:
 
@@ -481,3 +482,7 @@ c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\arm\arm-gnu-toolchain\arm-no
 ../src/PWMCustom.h:
 
 ../src/ADCCustom.h:
+
+../src/global_variables.h:
+
+../src/UARTFunctions.h:

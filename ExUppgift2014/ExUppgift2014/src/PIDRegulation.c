@@ -11,36 +11,23 @@
 #include "inttypes.h"
 #include "PWMCustom.h"
 #include "ADCCustom.h"
+#include "global_variables.h"
+#include "UARTFunctions.h"
 
-// PID
-int DISTANCE_SET = 0;
 
-int32_t P_CONSTANT = 0;
-int32_t I_CONSTANT = 0;
-int32_t D_CONSTANT = 0;
-
-int32_t error = 0;
-int32_t errSum = 0;
-int32_t dErr = 0;
-int32_t lastErr = 0;
-
-int32_t dTime = 0;
-
-//ADC
-int distance = 0;
-int32_t output_value = 0;
 
 void PIDRegulationTask (void *pvParameters)
 {
 	portTickType xLastWakeTime = xTaskGetTickCount();
-	const portTickType xFrequency = 1; // Run every few ms
+	const portTickType xFrequency = 100; // Run every few ms
 	
 	for(;;){
 		
 		//testFans(); // Gets stuck in this function which just test fans
 		
 		vTaskDelayUntil(&xLastWakeTime,xFrequency);	// Samplingstime
-		
+		getPIDValues();
+		setPIDValues();
 		PIDRegulate(); // Run PID
 	}
 }
@@ -52,10 +39,10 @@ void PRegulate(void){
 	distance = ADCReadSensor();
 	
 	// Calculate error
-	error = DISTANCE_SET - distance;
+	error = distanceSet - distance;
 	
 	// Calculate P, convert to procentage for the PWM
-	output_value = (((int32_t)P_CONSTANT * error) / 4095) / 100;
+	output_value = (((double)P_CONSTANT * error) / 4095) / 100;
 	
 	// Make sure the values do not exceed the PWM Duty Cycle range (0-100%)
 	if (output_value <= 0)
@@ -81,12 +68,19 @@ void PIDRegulate(void){
 	distance = ADCReadSensor();
 
 	// error values
-	error = DISTANCE_SET - distance;
-	errSum += (error + dTime);
-	dErr = (error - lastErr) / dTime;
+	error = distanceSet - distance;
 	
-	output_value = P_CONSTANT * error + I_CONSTANT * errSum + D_CONSTANT * dErr;
+	P_SET = (double) error;
+	I_SET += (double) old_error * dTime;
+	D_SET = (double) (error - old_error) * dTime;
 
+	old_error = error;
+		
+	output_value = (double) ((P_CONSTANT * P_SET) + (I_CONSTANT*I_SET) + (D_CONSTANT*D_SET));
+
+	// Convert output value to percentage for the PWM
+	output_value = (uint8_t) ((output_value * 100) / 4095);
+	
 	// Make sure the values do not exceed the PWM Duty Cycle range (0-100%)
 	if (output_value <= 0)
 	{
@@ -96,10 +90,7 @@ void PIDRegulate(void){
 	{
 		output_value = 100;
 	}
-
-	// Convert output value to procentage for the PWM
-	output_value = (output_value * 100) / 4095;
-	
+		
 	// Send the output_value to fan
 	PWMDutyCycle(output_value);
 }

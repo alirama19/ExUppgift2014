@@ -9,6 +9,19 @@
 #include "UARTFunctions.h"
 #include "uart.h"
 #include "conf_uart_serial.h"
+#include "global_variables.h"
+
+void SerialComTask (void *pvParameters)
+{
+	portTickType xLastWakeTime = xTaskGetTickCount();
+	const portTickType xFrequency = 300; // Run every few ms
+	
+	for(;;){
+		vTaskDelayUntil(&xLastWakeTime,xFrequency);
+		getPIDValues();
+		setPIDValues();
+	}
+}
 
 int receiveByte()
 {
@@ -34,6 +47,52 @@ void configure_console(void){
 
 void getPIDValues()
 {
+		while (!uart_is_rx_ready (CONF_UART)){};
+		uart_read(CONF_UART, &p_temp);
+		while (!uart_is_rx_ready (CONF_UART)){};
+		uart_read(CONF_UART, &i_temp);
+		while (!uart_is_rx_ready (CONF_UART)){};
+		uart_read(CONF_UART, &d_temp);
+		while (!uart_is_rx_ready (CONF_UART)){};
+		uart_read(CONF_UART, &dTime);
+		while (!uart_is_rx_ready (CONF_UART)){};
+		uart_read(CONF_UART, &distanceSet_temp);
+}
+
+void setPIDValues()
+{
+	double P_CONSTANT = (double) (p_temp / divider);
+	double I_CONSTANT = (double) (i_temp / divider);
+	double D_CONSTANT = (double) (d_temp / divider);
+	
+	switch(distanceSet_temp){
+		case 10 :
+		distanceSet = 100;
+		break;
+		
+		case 20 :
+		distanceSet = 200;
+		break;
+		
+		case 30 :
+		distanceSet = 300;
+		break;
+		
+		case 40 :
+		distanceSet = 400;
+		break;
+		
+		case 50 :
+		distanceSet = 500;
+		break;
+		
+		case 60 :
+		distanceSet = 600;
+		break;
+	}
+}
+
+void sendPIDValues(){
 	
 }
 

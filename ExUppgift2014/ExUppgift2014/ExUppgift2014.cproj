@@ -653,6 +653,12 @@
     <None Include="src\ASF\sam\drivers\pwm\pwm.h">
       <SubType>compile</SubType>
     </None>
+    <Compile Include="src\global_variables.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\global_variables.h">
+      <SubType>compile</SubType>
+    </Compile>
     <Compile Include="src\PIDRegulation.c">
       <SubType>compile</SubType>
     </Compile>
@@ -663,12 +669,6 @@
       <SubType>compile</SubType>
     </Compile>
     <Compile Include="src\PWMCustom.h">
-      <SubType>compile</SubType>
-    </Compile>
-    <Compile Include="src\SerialComTask.c">
-      <SubType>compile</SubType>
-    </Compile>
-    <Compile Include="src\SerialComTask.h">
       <SubType>compile</SubType>
     </Compile>
     <Compile Include="src\testFunctions.c">

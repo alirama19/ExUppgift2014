@@ -32,12 +32,10 @@
 #include "ADCCustom.h"
 #include "PIDRegulation.h"
 #include "PWMCustom.h"
-#include "SerialComTask.h"
 #include "testFunctions.h"
 #include "UARTFunctions.h"
-
-uint8_t testByte;
-int a = 0;	
+#include "global_variables.h"
+#include "delay.h"
 
 int main (void){
 	/* Initialize the Arduino Due system */
@@ -47,28 +45,28 @@ int main (void){
 	configure_console();
 		
 	ADCSetup();
+	PWMSetup();
+	PWMEnableCustomPin();
+	motorShield_init();
 
-	ioport_set_pin_dir(LED13, IOPORT_DIR_OUTPUT);
-	ioport_set_pin_level(LED13, LOW);
-	
-	ioport_set_pin_dir(LEDUART, IOPORT_DIR_OUTPUT);
-	ioport_set_pin_level(LEDUART, LOW);
-
-while (1)
-{	
-	
-//if(testByte == 0){
-while (!uart_is_rx_ready (CONF_UART)){
-	printf("%i\n", a);
-	};
-uart_read(CONF_UART, &testByte);
+// /* Creating the sensor-reading task */
+// if (xTaskCreate(PIDRegulationTask, (const signed char * const) "PIDRegulation",
+// TASK_PIDRegulation_STACK_SIZE, NULL, TASK_PIDRegulation_STACK_PRIORITY, NULL) != pdPASS)
+// {
+// 	printf("Failed to create PIDRegulationTask\r\n");
 // }
-delay_ms(100);
-if(testByte > 0)
+// 
+// /* Creating the serial-printing task */
+// if (xTaskCreate(SerialComTask, (const signed char * const) "SerialComTask",
+// TASK_SerialComTask_STACK_SIZE, NULL, TASK_SerialComTask_STACK_PRIORITY, NULL) != pdPASS)
+// {
+// 	printf("Failed to create SerialComTask\r\n");
+// }
+// 
+// /* Start the FreeRTOS scheduler running all tasks indefinitely*/
+// vTaskStartScheduler();
+while(1)
 {
-	ioport_set_pin_level(LEDUART, HIGH);
-}
-
-printf("%i\n", testByte);
+	testSend();
 }
 }

@@ -152,8 +152,8 @@ src/main.d src/main.o: ../src/main.c ../src/asf.h \
  ../src/ASF/sam/drivers/uart/uart.h ../src/ASF/sam/drivers/usart/usart.h \
  ../src/config/conf_uart_serial.h \
  ../src/ASF/sam/drivers/pio/pio_handler.h ../src/ADCCustom.h \
- ../src/PIDRegulation.h ../src/PWMCustom.h ../src/SerialComTask.h \
- ../src/testFunctions.h ../src/UARTFunctions.h
+ ../src/PIDRegulation.h ../src/PWMCustom.h ../src/testFunctions.h \
+ ../src/UARTFunctions.h ../src/global_variables.h
 
 ../src/asf.h:
 
@@ -479,8 +479,8 @@ c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\arm\arm-gnu-toolchain\arm-no
 
 ../src/PWMCustom.h:
 
-../src/SerialComTask.h:
-
 ../src/testFunctions.h:
 
 ../src/UARTFunctions.h:
+
+../src/global_variables.h:

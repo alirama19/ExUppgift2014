@@ -116,9 +116,9 @@ C_SRCS +=  \
 ../src/ASF/common/services/delay/sam/cycle_counter.c \
 ../src/ASF/sam/drivers/pwm/pwm.c \
 ../src/ASF/sam/drivers/uart/uart.c \
+../src/global_variables.c \
 ../src/PIDRegulation.c \
 ../src/PWMCustom.c \
-../src/SerialComTask.c \
 ../src/testFunctions.c \
 ../src/UARTFunctions.c \
 ../src/ASF/common/services/clock/sam3x/sysclk.c \
@@ -159,9 +159,9 @@ src/ASF/sam/drivers/adc/adc_sam3u.o \
 src/ASF/common/services/delay/sam/cycle_counter.o \
 src/ASF/sam/drivers/pwm/pwm.o \
 src/ASF/sam/drivers/uart/uart.o \
+src/global_variables.o \
 src/PIDRegulation.o \
 src/PWMCustom.o \
-src/SerialComTask.o \
 src/testFunctions.o \
 src/UARTFunctions.o \
 src/ASF/common/services/clock/sam3x/sysclk.o \
@@ -195,9 +195,9 @@ src/ASF/sam/drivers/adc/adc_sam3u.o \
 src/ASF/common/services/delay/sam/cycle_counter.o \
 src/ASF/sam/drivers/pwm/pwm.o \
 src/ASF/sam/drivers/uart/uart.o \
+src/global_variables.o \
 src/PIDRegulation.o \
 src/PWMCustom.o \
-src/SerialComTask.o \
 src/testFunctions.o \
 src/UARTFunctions.o \
 src/ASF/common/services/clock/sam3x/sysclk.o \
@@ -231,9 +231,9 @@ src/ASF/sam/drivers/adc/adc_sam3u.d \
 src/ASF/common/services/delay/sam/cycle_counter.d \
 src/ASF/sam/drivers/pwm/pwm.d \
 src/ASF/sam/drivers/uart/uart.d \
+src/global_variables.d \
 src/PIDRegulation.d \
 src/PWMCustom.d \
-src/SerialComTask.d \
 src/testFunctions.d \
 src/UARTFunctions.d \
 src/ASF/common/services/clock/sam3x/sysclk.d \
@@ -267,9 +267,9 @@ src/ASF/sam/drivers/adc/adc_sam3u.d \
 src/ASF/common/services/delay/sam/cycle_counter.d \
 src/ASF/sam/drivers/pwm/pwm.d \
 src/ASF/sam/drivers/uart/uart.d \
+src/global_variables.d \
 src/PIDRegulation.d \
 src/PWMCustom.d \
-src/SerialComTask.d \
 src/testFunctions.d \
 src/UARTFunctions.d \
 src/ASF/common/services/clock/sam3x/sysclk.d \

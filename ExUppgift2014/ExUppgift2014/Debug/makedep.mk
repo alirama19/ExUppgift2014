@@ -36,11 +36,11 @@ src\ASF\sam\drivers\pwm\pwm.c
 
 src\ASF\sam\drivers\uart\uart.c
 
+src\global_variables.c
+
 src\PIDRegulation.c
 
 src\PWMCustom.c
-
-src\SerialComTask.c
 
 src\testFunctions.c
 
